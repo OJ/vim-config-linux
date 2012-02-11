@@ -49,3 +49,6 @@
 [submodule "bundle/vimerl"]
 	path = bundle/vimerl
 	url = https://github.com/RJ/vimerl.git
+[submodule "bundle/hammer.vim"]
+	path = bundle/hammer.vim
+	url = git@github.com:OJ/hammer.vim.git
