@@ -52,3 +52,15 @@
 [submodule "bundle/hammer.vim"]
 	path = bundle/hammer.vim
 	url = git@github.com:OJ/hammer.vim.git
+[submodule "bundle/vim-taglist"]
+	path = bundle/vim-taglist
+	url = https://github.com/vim-scripts/taglist.vim
+[submodule "bundle/zencoding-vim"]
+	path = bundle/zencoding-vim
+	url = git://github.com/mattn/zencoding-vim
+[submodule "bundle/vim-mustache"]
+	path = bundle/vim-mustache
+	url = git://github.com/juvenn/mustache.vim
+[submodule "bundle/vim-handlebars"]
+	path = bundle/vim-handlebars
+	url = https://github.com/nono/vim-handlebars

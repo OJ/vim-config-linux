@@ -5,6 +5,8 @@ let g:erlangManPath="/usr/local/Cellar/erlang/R14B04/share/man"
 let g:erlangCheckFile="~/.vim/bundle/vimerl/compiler/erlang_check_file.erl"
 let g:erlangWranglerPath="/usr/local/Cellar/wrangler/0.9.2.3/share/wrangler/"
 
+color molokai
+
 filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -29,7 +31,6 @@ set showmatch
 set hlsearch
 set incsearch
 set ruler
-set lines=40 columns=90
 set wmh=0
 set showmode
 set showcmd
@@ -53,6 +54,7 @@ highlight SpellLocal term=underline cterm=underline
 " don't show these files
 set wildignore=.svn,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*~,*.*~
 set wildignore+=*.rbc,*.rbo,*.gem,._*,*.beam
+set wildignore+=*/deps/*
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 
@@ -211,6 +213,10 @@ nmap <leader>n :NERDTreeToggle<CR>
 
 " Adjust viewports to the same size
 map <Leader>= <C-w>=
+
+if !has("gui_running")
+  set clipboard=unnamed
+endif
 
 if has("gui_running")
   if has("autocmd")
