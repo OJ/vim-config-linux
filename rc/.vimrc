@@ -1,4 +1,5 @@
 " plugin options
+let g:Powerline_symbols='fancy'
 let g:buffergator_suppress_keymaps=1
 let g:erlangHighlightBif=1
 let g:erlangManPath="/usr/local/Cellar/erlang/R14B04/share/man"
@@ -252,4 +253,3 @@ if has("statusline") && !&cp
 endif
 
 map <leader>zw <Plug>ZoomWin
-
