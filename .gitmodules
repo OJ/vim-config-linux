@@ -67,3 +67,9 @@
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "bundle/vim-fontsize"]
+	path = bundle/vim-fontsize
+	url = https://github.com/drmikehenry/vim-fontsize

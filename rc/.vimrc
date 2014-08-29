@@ -1,5 +1,5 @@
 " plugin options
-let g:Powerline_symbols='fancy'
+"let g:Powerline_symbols='fancy'
 let g:buffergator_suppress_keymaps=1
 let g:erlangHighlightBif=1
 let g:erlangManPath="/usr/local/Cellar/erlang/R14B04/share/man"
@@ -25,8 +25,8 @@ set formatoptions=l
 set smarttab
 set wildmenu
 set wildmode=list:longest,full
-set foldmethod=syntax
-set foldlevel=99
+"set foldmethod=syntax
+"set foldlevel=99
 set lbr
 set showmatch
 set hlsearch
@@ -105,16 +105,13 @@ inoremap <silent> <F3> <ESC>:YRShow<cr>
 " markdown preview
 nnoremap <silent> <Leader>md :Hammer<cr>
 
-" visual indication for bit lines
-set colorcolumn=90
+" visual indication for long lines
+set colorcolumn=91
+" but only show it when the line is actually long.
+call matchadd('ColorColumn', '\%91v', 100)
 
-" List chars
-set listchars=""
-set listchars=tab:\ \
-set listchars+=trail:.
-set listchars+=extends:>
-set listchars+=precedes:<
-"set listchars=tab:ª∑,trail:∑,nbsp:∑
+" List chars with unicode
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 
 " toggle whitespace view
 nmap <silent> <leader>s :set nolist!<CR>
@@ -253,3 +250,22 @@ if has("statusline") && !&cp
 endif
 
 map <leader>zw <Plug>ZoomWin
+
+" Open any file with pre-existing swapfile in readonly mode
+augroup NoSimultaneousEdits
+  autocmd!
+  autocmd SwapExists * let v:swapchoice = 'o'
+  autocmd SwapExists * echomsg ErrorMsg
+  autocmd SwapExists * echo 'Duplicate edit session (readonly)'
+  autocmd SwapExists * echohl None
+  autocmd SwapExists * sleep 2
+augroup END
+
+" Make CTRL-K show digraphs first
+"inoremap <expr> <C-K> ShowDigraphs()
+"
+"function! ShowDigraphs()
+"  digraphs
+"  call getchar()
+"  return "\<C-K>"
+"endfunction
