@@ -258,4 +258,3 @@ augroup NoSimultaneousEdits
   autocmd SwapExists * echohl None
   autocmd SwapExists * sleep 2
 augroup END
-
