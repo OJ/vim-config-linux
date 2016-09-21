@@ -66,6 +66,9 @@ set ignorecase
 " terminal title
 set title
 
+" stop that bloody folding!
+set nofoldenable
+
 " Intuitive backspacking in insert mode
 set backspace=indent,eol,start
 set smartcase
@@ -258,3 +261,4 @@ augroup NoSimultaneousEdits
   autocmd SwapExists * echohl None
   autocmd SwapExists * sleep 2
 augroup END
+
