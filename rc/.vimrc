@@ -12,9 +12,16 @@ call pathogen#helptags()
 
 let mapleader=","
 
+" buffergator stuff
+let g:buffergator_suppress_keymaps=1
+let g:buffergator_viewport_split_policy="t"
+let g:buffergator_split_size=8
+let g:buffergator_sort_regime="mru"
+
+set completefunc=emoji#complete
+set expandtab
 set ts=2
 set sw=2
-set expandtab
 set guioptions-=m
 set guioptions-=T
 set scrolloff=5
@@ -148,6 +155,9 @@ set mousehide
 " simple hex editing
 :map <Leader>hon :%!xxd<CR>
 :map <Leader>hoff :%!xxd -r<CR>
+
+" emoji!
+:map <Leader>em :s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
 
 " shortcut for changing syntax
 :command! -nargs=1 -complete=option Syn set ft=<args>
