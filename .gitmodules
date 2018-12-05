@@ -72,9 +72,6 @@
 	url = https://github.com/drmikehenry/vim-fontsize
 	path = bundle/rust.vim
 	url = https://github.com/wting/rust.vim
-[submodule "bundle/vim-go"]
-	path = bundle/vim-go
-	url = https://github.com/fatih/vim-go.git
 [submodule "bundle/emmet-vim"]
 	path = bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim
