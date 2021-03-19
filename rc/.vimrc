@@ -17,6 +17,7 @@ let g:buffergator_suppress_keymaps=1
 let g:buffergator_viewport_split_policy="t"
 let g:buffergator_split_size=8
 let g:buffergator_sort_regime="mru"
+"let g:ctrlp_working_path_mode = 'c'
 
 set completefunc=emoji#complete
 set expandtab
@@ -147,7 +148,10 @@ set confirm
 nnoremap <C-S> :,$s/\<<C-R><C-W>\>/
 "
 " turn off that fucking bell
-set noerrorbells
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif 
 
 " hide the mouse while doing stuff
 set mousehide
@@ -162,8 +166,7 @@ set mousehide
 " shortcut for changing syntax
 :command! -nargs=1 -complete=option Syn set ft=<args>
 
-" wire commandt in
-:map <Leader>t :CommandT<CR>
+:map <Leader>t :CtrlP<CR>
 
 " get buffergator to be nice
 nnoremap <silent> <Leader>b :BuffergatorOpen<CR>
@@ -272,3 +275,8 @@ augroup NoSimultaneousEdits
   autocmd SwapExists * sleep 2
 augroup END
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
